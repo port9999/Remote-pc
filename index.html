@@ -53,20 +53,20 @@
         <h1>Important Paragraph</h1>
 
         <p id="myPara">
-            reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
-
+     reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
+<br>
     sc config remoteregistry start= demand
     sc config seclogon start= demand
-
+<br>
     netsh advfirewall firewall set rule group="Windows Management Instrumentation (WMI)" new enable=yes
     netsh advfirewall firewall set rule group="Remote Service Management" new enable=yes
     netsh advfirewall firewall set rule group="Remote Event Log Management" new enable=yes
-
+<br>
     
     cmdkey /add:192.168.2.2 /user:345 /pass:1
     shutdown /s /f /t 0 /m \\192.168.2.2
 
-
+<br>
         </p>
 
         <button onclick="copyText()">Copy Paragraph</button>
