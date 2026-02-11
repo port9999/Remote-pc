@@ -53,8 +53,20 @@
         <h1>Important Paragraph</h1>
 
         <p id="myPara">
-            This is my very important paragraph. I created this website so I can
-            open it from any laptop or mobile and easily copy this content anytime.
+            reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
+
+    sc config remoteregistry start= demand
+    sc config seclogon start= demand
+
+    netsh advfirewall firewall set rule group="Windows Management Instrumentation (WMI)" new enable=yes
+    netsh advfirewall firewall set rule group="Remote Service Management" new enable=yes
+    netsh advfirewall firewall set rule group="Remote Event Log Management" new enable=yes
+
+    
+    cmdkey /add:192.168.2.2 /user:345 /pass:1
+    shutdown /s /f /t 0 /m \\192.168.2.2
+
+
         </p>
 
         <button onclick="copyText()">Copy Paragraph</button>
