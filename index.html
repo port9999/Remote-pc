@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Muthu Notes</title>
+    <title>Hidden port</title>
     <meta charset="UTF-8">
     <style>
         body {
@@ -50,7 +50,7 @@
 <body>
 
     <div class="box">
-        <h1>Important Paragraph</h1>
+        <h1>commands</h1>
 
         <p id="myPara">
      reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
@@ -62,8 +62,9 @@
     netsh advfirewall firewall set rule group="Remote Service Management" new enable=yes
     netsh advfirewall firewall set rule group="Remote Event Log Management" new enable=yes
 <br>
-    
+<br>
     cmdkey /add:192.168.2.2 /user:345 /pass:1
+    <br>
     shutdown /s /f /t 0 /m \\192.168.2.2
 
 <br>
