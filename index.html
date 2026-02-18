@@ -54,19 +54,29 @@
 
         <p id="myPara">
      reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
+
+<br>
 <br>
     sc config remoteregistry start= demand
+    <br>
     sc config seclogon start= demand
 <br>
-    netsh advfirewall firewall set rule group="Windows Management Instrumentation (WMI)" new enable=yes
-    netsh advfirewall firewall set rule group="Remote Service Management" new enable=yes
-    netsh advfirewall firewall set rule group="Remote Event Log Management" new enable=yes
+    net start RemoteRegistry
 <br>
-<br>
-    cmdkey /add:192.168.2.2 /user:345 /pass:1
-    <br>
-    shutdown /s /f /t 0 /m \\192.168.2.2
+    net start seclogon
 
+<br>
+    netsh advfirewall firewall set rule group="Remote Service Management" new enable=yes
+
+<br>
+<br>
+   cmdkey /add:192.168.1.15 /user:"DESKTOP-R1PBJ3N\sys 02" /pass:1
+    <br>
+    shutdown /s /f /t 0 /m \\192.168.1.15
+<br>
+shutdown /r /f /t 0 /m \\192.168.1.15
+<br>
+cmdkey /delete:192.168.1.15
 <br>
         </p>
 
