@@ -151,4 +151,23 @@ obj3.display();
 Professor obj4=new Professor();
 obj4.display();
 }
-}
+}
+System.out.println("1.Push 2.Pop 3.Display
+4.Exit"); System.out.println("Enter your
+choice:"); ch=Integer.parseInt(br.readLine()); 
+switch(ch)
+{
+case 1:
+stk.push(); 
+break;
+case 2:
+stk.pop(); 
+break;
+case 3:
+40
+stk.display(); 
+break;
+case 4:
+System.exit(0);
+}
+}while(ch<5);
