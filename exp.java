@@ -152,6 +152,54 @@ Professor obj4=new Professor();
 obj4.display();
 }
 }
+_____________________________
+atch(IOException e)
+{System.out.println("e");
+}
+}
+public void pop()
+{
+if(top<0)
+{
+System.out.println("Stack
+underflow"); return;
+}
+else
+{
+int
+popper=stack[top]; 
+top--;
+System.out.println("Popped element:" +popper);
+}
+}
+public void display()
+{
+if(top<0)
+{
+System.out.println("Stack is
+empty"); return;
+}
+else
+{
+40
+String str=" ";
+for(int i=0; i<=top; i++) 
+str=str+" "+stack[i]+" <--";
+System.out.println("Elements are:"+str);
+}
+}
+}
+class Stack_ADT
+{
+public static void main(String arg[])throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader
+(System.in));
+System.out.println("Implementation of Stack using Array"); Stack_array stk=new
+Stack_array(); int ch=0;
+do
+{
+
 System.out.println("1.Push 2.Pop 3.Display
 4.Exit"); System.out.println("Enter your
 choice:"); ch=Integer.parseInt(br.readLine()); 
@@ -171,3 +219,5 @@ case 4:
 System.exit(0);
 }
 }while(ch<5);
+}
+}
